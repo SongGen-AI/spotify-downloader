@@ -639,6 +639,6 @@ def args_to_ytdlp_options(argument_list: List[str]) -> Dict[str, Any]:
                         values.append(argument_list[val_index + 1])
                         val_index += 1
 
-                    options_dict[option.dest] = values
+                    options_dict[option.dest] = values if len(values) > 1 else values[0]
 
     return options_dict
